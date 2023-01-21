@@ -71,6 +71,7 @@ ul {
   line-height: 16px;
   initial-letter-align: 2%;
   font-weight: 500;
+  position: relative;
 }
 
 .main-nav-link:hover,
@@ -83,8 +84,10 @@ ul {
   content: "";
   border-bottom: 4px solid var(--blue);
   border-radius: 2px;
-  width: 58px;
-  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: -32px;
+  left: 0;
 }
 
 .contact-list {
@@ -249,12 +252,6 @@ ul {
   width: 260px;
   height: 260px;
 }
-
-/* .img-container {
-  display: block;
-  max-width: 100%;
-  height: auto;
-} */
 
 .photo-container-name {
   font-size: 16px;
