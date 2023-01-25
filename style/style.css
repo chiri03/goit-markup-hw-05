@@ -4,6 +4,7 @@
   --black: #212121;
   --gray: #757575;
   --lightgrey: #f5f4fa;
+  --fontWeight: 700;
 }
 html,
 body {
@@ -42,7 +43,7 @@ ul {
 }
 
 .logo {
-  font-weight: 700;
+  font-weight: var(--fontWeight);
   font-size: 26px;
   line-height: 31px;
   letter-spacing: 0.03em;
@@ -71,6 +72,9 @@ ul {
   line-height: 16px;
   initial-letter-align: 2%;
   font-weight: 500;
+  position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-nav-link:hover,
@@ -83,8 +87,10 @@ ul {
   content: "";
   border-bottom: 4px solid var(--blue);
   border-radius: 2px;
-  width: 58px;
-  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: -32px;
+  left: 0;
 }
 
 .contact-list {
@@ -104,6 +110,7 @@ ul {
   color: var(--gray);
   padding: 5px;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-section-value:hover,
@@ -152,12 +159,14 @@ ul {
   padding: 10px 20px;
   border-radius: 4px;
   margin-top: 30px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
 .button:focus,
 .button:active {
-  background: var(--lightgrey);
+  background-color: var(--lightgrey);
   color: var(--blue);
 }
 
@@ -168,7 +177,7 @@ ul {
 }
 
 .skills {
-  font-weight: 700;
+  font-weight: var(--fontWeight);
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.03em;
@@ -190,7 +199,7 @@ ul {
 /* section What we to do */
 
 .workTitle {
-  font-weight: 700;
+  font-weight: var(--fontWeight);
   font-size: 36px;
   line-height: 36px;
   letter-spacing: 0.03em;
@@ -204,11 +213,27 @@ ul {
   justify-content: space-around;
   padding-left: 0 215px;
 }
+.box {
+  position: relative;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.box-bottom {
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  bottom: 3px;
+  background: rgba(47, 48, 58, 0.8);
+  color: var(--white);
+  padding: 27px;
+}
 
-.box:hover,
-.box:focus,
-.box:active {
-  opacity: 0.7;
+.box-bottom p {
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-weight: var(--fontWeight);
 }
 
 /* team section */
@@ -223,7 +248,7 @@ ul {
 }
 
 .our-team {
-  font-weight: 700;
+  font-weight: var(--fontWeight);
   font-size: 36px;
   line-height: 42px;
   text-align: center;
@@ -249,12 +274,6 @@ ul {
   width: 260px;
   height: 260px;
 }
-
-/* .img-container {
-  display: block;
-  max-width: 100%;
-  height: auto;
-} */
 
 .photo-container-name {
   font-size: 16px;
@@ -282,7 +301,7 @@ ul {
 .footer-logo {
   font-family: "Raleway", sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--fontWeight);
   font-size: 26px;
   line-height: 31px;
   letter-spacing: 0.03em;
@@ -298,6 +317,7 @@ ul {
   line-height: 16px;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nv-items-footer:hover,
@@ -329,7 +349,6 @@ ul {
 }
 
 .filters button {
-  background: var(--lightgrey);
   border-radius: 4px;
   border: none;
   width: 121px;
@@ -339,13 +358,17 @@ ul {
 }
 
 .filter-name {
-  font-weight: 700;
+  font-weight: var(--fontWeight);
   font-size: 16px;
   line-height: 34px;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--black);
   box-sizing: border-box;
+  background-color: var(--lightgrey);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-name:hover,
@@ -361,15 +384,42 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 30px;
 }
 
 .container-img-file {
   background: var(--white);
   border: 1px solid rgba(238, 238, 238, 1);
   height: 405px;
-  margin-bottom: 30px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card {
+  overflow: hidden;
+  position: relative;
+  width: 370px;
+  height: 290px;
+}
+.overlay {
+  width: 370px;
+  height: 290px;
+  position: absolute;
+  opacity: 0.7;
+  background-color: var(--blue);
+  transform: translateY(370px);
+  transition: transform 250ms ease-in-out;
+}
+.card:hover .overlay {
+  transform: translateY(0);
 }
 
+.card:hover ::after {
+  content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro eveniet quae alias deserunt quos, maxime doloremque laudantium aspernatur neque? Minima nostrum totam quo quam eaque! Tempora tenetur aliquam dolorem eius.";
+  color: var(--white);
+  top: 50%;
+  position: absolute;
+  padding: 15px;
+  line-height: 1.2;
+}
 .container-img-file:hover,
 .container-img-file:active,
 .container-img-file:focus {
@@ -378,7 +428,7 @@ ul {
 }
 
 .container-img-file-head {
-  font-weight: 700;
+  font-weight: var(--fontWeight);
   font-size: 18px;
   line-height: 36px;
   padding: 20px 0px 0px 24px;
@@ -415,6 +465,15 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.customer-logo-item:hover,
+.customer-logo-item:focus,
+.customer-logo-item:active {
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 .customers-logo-icon {
@@ -430,20 +489,13 @@ ul {
 }
 
 .customer-section {
-  font-weight: 700;
+  font-weight: var(--fontWeight);
   font-size: 36px;
   line-height: 42px;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--black);
   padding-bottom: 50px;
-}
-
-.customer-logo-item:hover,
-.customer-logo-item:focus,
-.customer-logo-item:active {
-  border-color: var(--blue);
-  color: var(--blue);
 }
 
 .social-icons-list {
@@ -467,12 +519,8 @@ ul {
   align-items: center;
   position: relative;
   color: var(--white);
-}
-
-.team-link {
-  color: var(--gray);
-  left: 25px;
-  bottom: 20px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -482,10 +530,16 @@ ul {
   background-color: var(--blue);
 }
 
+.team-link {
+  color: var(--gray);
+  left: 25px;
+  bottom: 20px;
+}
+
 .find-us-p {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--fontWeight);
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.03em;
@@ -532,4 +586,54 @@ ul {
 
 .footer-address {
   margin-left: 200px;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inner-modal {
+  width: 528px;
+  height: 581px;
+  background-color: var(--white);
+}
+
+.close-modal {
+  background-color: var(--white);
+  height: 30px;
+  width: 30px;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  float: right;
+  position: relative;
+  top: 8px;
+  right: 8px;
+}
+
+.close-btn {
+  fill: var(--black);
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.2);
 }
