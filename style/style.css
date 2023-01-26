@@ -83,7 +83,7 @@ ul {
   color: var(--blue);
 }
 
-.main-nav-link:hover:after {
+.portfolio .main-nav-link:hover:after {
   content: "";
   border-bottom: 4px solid var(--blue);
   border-radius: 2px;
