@@ -414,7 +414,7 @@ ul {
 }
 
 .card:hover ::after {
-  content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro eveniet quae alias deserunt quos, maxime doloremque laudantium aspernatur neque? Minima nostrum totam quo quam eaque! Tempora tenetur aliquam dolorem eius.";
+  content: "Technoduck is a state-of-the-art coronavirus distribution platform. Companies use this platform for digital espionage and attacks on competitors' secure servers.";
   color: var(--white);
   top: 50%;
   position: absolute;
@@ -617,19 +617,18 @@ ul {
   position: relative;
   top: 8px;
   right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .close-btn {
   fill: var(--black);
   width: 22px;
   height: 22px;
-  display: flex;
-  justify-content: center;
-
   cursor: pointer;
-  position: absolute;
-  top: 3px;
-  right: 3px;
 }
 
 .is-hidden {
